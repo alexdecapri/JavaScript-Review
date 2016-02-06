@@ -108,19 +108,21 @@ methodCollection.logHello = function() {
 var string = 'hello';
 function voweler(str) {
   var vObject = {};
-  var vowels = ["a", "e", "i", "o", "u"];
+  var vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
   for (var i = 0; i < str.length; i++) {
     if (vowels.indexOf(str[i]) !== -1) {   //indexOf returns -1 when not found... so this says "if it was found"
-      if (!vObject.str[i]) {  //if vObject key doesn't exist (Falsey) make it truthy so this runs (with the "!")
-        vObject.str[i] = 1;
+      if (!vObject[str[i]]) {  //if vObject key doesn't exist (Falsey) make it truthy so this runs (with the "!")
+        vObject[str[i]] = 1;  //can't use string notation for some reason
       }
       else {
-        vObject.str[i]++;
+        vObject[str[i]]++;
       }
     }
   }
   return vObject;
 }
+
+//use BRACKET NOTATION
 
 
 
