@@ -53,7 +53,13 @@ function returner() {
 //the songs and return them.
   
 
+function setter(obj, cb) {
+    songs.push(obj);
+    return cb();  // need this return to return what the original function returns
+}
 
+
+// to test: setter({obj}, returner);
 
 
 
