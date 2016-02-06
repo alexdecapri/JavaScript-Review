@@ -164,13 +164,17 @@ getUserById('16t', users, function(user){
 
 
 function find(arr, cb) {
-
+  for (var i = 0; i < arr.length; i++) {
+    if (cb(arr[i])) {  //simplified version of if "(cb(arr[i]) === true)"
+      return arr[i];
+    }
+  }
 }
 
 //Looks through each value in the list, returning the first one that 
 //passes a truth test 
 var numbers  = [1, 2, 3, 4, 5, 6];
-find(numbers, function(num){ 
+find(numbers, function(num){     // this function returns T or F based on the number passed into the anonymous func
   return num % 2 == 0; //should return 2
 })
 
