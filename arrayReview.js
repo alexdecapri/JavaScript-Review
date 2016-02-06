@@ -143,16 +143,41 @@ var theOdyssey = "function expression or function declaration? Tis an obvious ch
 //Write a function called vowelCounter that takes in a string 
 //(theOdyssey) and returns how many vowels are in that string.
 
+/*
+INCORRECT
 function vowelCounter(str) {
 	var vowels = [];
 	var allLetters = str.split("");
 	for (var i = 0; i < allLetters.length; i++) {
-		if (allLetters[i] === "a" || "e" || "i" || "o" || "u") {
+		if (allLetters[i] === "a" || "e" || "i" || "o" || "u") { //would need to write allLetters[i] === "a" || allLetters[i] === "e" in this way for this to properly analyze
 			vowels.push(allLetters[i]);
 		}
 	}
 	return vowels.length;
 }
+*/
+
+
+
+
+function vowelCounter(str) {
+	var vowels = ['a', 'e', 'i', 'o', 'u'];
+	var result = 0; //or result = [];
+	for (var i = 0; i < str.length; i++) {
+		// if str[i] is in vowels array 
+		if (vowels.indexOf(str[i]) !== -1) {
+			result++; //or result.push(str[i]);
+		}
+	}
+	return result; //or return result.length;
+}
+
+
+
+
+
+
+
 
 
 
